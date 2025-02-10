@@ -53,3 +53,5 @@ for i = 1:numel(componentes{1}) % 13 cajas
     end
     arreglos.(sprintf('caja_%d', i)) = tabla_gyn;
 end
+
+arreglos = calculo_BC(arreglos);
