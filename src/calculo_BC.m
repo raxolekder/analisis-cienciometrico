@@ -1,5 +1,5 @@
 function arreglos = calculo_BC(arreglos)
-    for i = 1:numel(componentes{1})
+    for i = 1:13
         caja = sprintf('caja_%d', i);
         for j = 1:height(arreglos.(caja))
             grafo = arreglos.(caja).Grafo{j, 1};

@@ -1,5 +1,5 @@
 function arreglos = calculo_sigma(arreglos)
-    for i = 1:numel(componentes{1})
+    for i = 1:13
         caja = sprintf('caja_%d', i);
         for j = 1:height(arreglos.(caja))
             valor_bc = arreglos.(caja).BC(j);
