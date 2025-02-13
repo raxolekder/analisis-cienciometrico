@@ -68,3 +68,5 @@ for i = 1:numel(componentes{1}) %agrega el valor de burstness al nodo que corres
     end
     arreglos.(caja) = tablaActual;
 end
+
+arreglos = calculo_sigma(arreglos); %calcula sigma
