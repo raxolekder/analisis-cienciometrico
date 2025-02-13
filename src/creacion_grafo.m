@@ -70,3 +70,11 @@ for i = 1:numel(componentes{1}) %agrega el valor de burstness al nodo que corres
 end
 
 arreglos = calculo_sigma(arreglos); %calcula sigma
+
+tabla_completa = table(); %permite la manipulación de la información en una única tabla con todos los resultados
+for i = 1:numel(componentes{1})
+    caja = sprintf('caja_%d', i); 
+    tabla_actual = arreglos.(caja);     
+    tabla_actual.Caja = repmat({caja}, height(tabla_actual), 1);
+    tabla_completa = [tabla_completa; tabla_actual];
+end
