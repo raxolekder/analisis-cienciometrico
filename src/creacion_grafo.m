@@ -77,4 +77,4 @@ for i = 1:numel(componentes{1})
     tabla_actual = arreglos.(caja);     
     tabla_actual.Caja = repmat({caja}, height(tabla_actual), 1);
     tabla_completa = [tabla_completa; tabla_actual];
-end
+end 
