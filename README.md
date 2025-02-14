@@ -112,8 +112,7 @@ Para preguntas o comentarios, puedes escribirme a:
 ---
 
 ## **⚖️ Licencia**
-Si usas una licencia abierta:  
-Este proyecto está bajo la licencia MIT. Ver el archivo `LICENSE` para más detalles.
+Este proyecto fue desarrollado como trabajo de tesis para el Instituto Politécnico Nacional - Unidad Profesional Interdisciplinaria de Ingeniería y Ciencias Sociales y Administrativas (UPIICSA) . Todos los derechos reservados © 2025 IPN.
 
 ---
 
