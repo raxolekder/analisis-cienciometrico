@@ -9,8 +9,9 @@
 
 ## **📌 Descripción**
 
-> **Ejemplo**:  
-> Este proyecto forma parte de mi tesis titulada *"Redefinición de indicador de cienciometría para la novedad científica"*. Redefinir el indicador cienciométrico de novedad científica "sigma"; aplicando el método de cubrimiento de cajas, a un gran volumen de artículos científicos, tal que, de la serie de datos resultante se obtenga la entropía máxima, la cual oriente sobre la novedad científica del volumen de artículos analizado; siendo esto la redefinición propia del indicador "sigma".
+ 
+Este proyecto forma parte de mi tesis titulada *"Redefinición de indicador de cienciometría para la novedad científica"*. Redefinir el indicador cienciométrico de novedad científica "sigma"; aplicando el método de cubrimiento de cajas, a un gran volumen de artículos científicos, tal que, de la serie de datos resultante se obtenga la entropía máxima, la cual oriente sobre la novedad científica del volumen de artículos analizado; siendo esto la redefinición propia del indicador "sigma".
+
 ---
 
 ## **📁 Estructura del Proyecto**
@@ -19,7 +20,7 @@ Explicación de la organización de los archivos y carpetas.
 ```plaintext
 📂 Tesis-Burstness
  ├── 📜 README.md               # Este archivo
- ├── 📜 tesis.pdf               # Documento final de la tesis
+ ├── 📜 TESIS_DIPV.pdf          # Documento final de la tesis
  ├── 📂 src/                    # Código fuente
  │   ├── burstness.m            # Implementación del algoritmo de Kleinberg
  │   ├── procesar_datos.m       # Preprocesamiento de datos
@@ -40,9 +41,8 @@ Explicación de la organización de los archivos y carpetas.
 Lista de herramientas, software y librerías necesarias para ejecutar el código.
 
 ### **🔧 Requisitos**
-- **MATLAB** (Versión mínima recomendada: R2021a)  
-- **Toolboxes**: Statistics and Machine Learning, Graph Theory Toolbox  
-- **Dependencias externas** (si aplica)  
+- **MATLAB** (Versión mínima recomendada: R2024b)  
+- **Toolboxes**: Statistics and Machine Learning, Graph Theory Toolbox   
 
 ### **💻 Instalación**
 
@@ -51,7 +51,7 @@ git clone https://github.com/usuario/tesis-burstness.git
 cd tesis-burstness
 ```
 
-En MATLAB, abre `burstness.m` y ejecuta:
+En MATLAB, abre `.m` y ejecuta:
 
 ```matlab
 run('burstness.m')
