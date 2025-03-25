@@ -8,11 +8,9 @@
 ---
 
 ## **📌 Descripción**
-Breve resumen de tu trabajo, su propósito y relevancia. Explica el problema que resuelve y su importancia.
 
 > **Ejemplo**:  
-> Este proyecto forma parte de mi tesis titulada *"Análisis de Burstness en Redes de Citas Científicas"*. Implementa el algoritmo de Kleinberg en MATLAB para detectar tendencias emergentes en redes de citas.
-
+> Este proyecto forma parte de mi tesis titulada *"Redefinición de indicador de cienciometría para la novedad científica"*. Redefinir el indicador cienciométrico de novedad científica "sigma"; aplicando el método de cubrimiento de cajas, a un gran volumen de artículos científicos, tal que, de la serie de datos resultante se obtenga la entropía máxima, la cual oriente sobre la novedad científica del volumen de artículos analizado; siendo esto la redefinición propia del indicador "sigma".
 ---
 
 ## **📁 Estructura del Proyecto**
