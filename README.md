@@ -111,11 +111,3 @@ Para preguntas o comentarios, puedes escribirme a:
 
 ## **⚖️ Licencia**
 Este proyecto fue desarrollado como trabajo de tesis para el Instituto Politécnico Nacional - Unidad Profesional Interdisciplinaria de Ingeniería y Ciencias Sociales y Administrativas (UPIICSA) . Todos los derechos reservados © 2025 IPN.
-
----
-
-### **📌 Buenas Prácticas Generales**
-✔ **Claro y conciso**: No más largo de lo necesario.  
-✔ **Formato estructurado**: Usa secciones bien definidas.  
-✔ **Ejemplos y código**: Incluye fragmentos listos para copiar y pegar.  
-✔ **Referencias**: Si usaste papers o herramientas, cítalas.  
