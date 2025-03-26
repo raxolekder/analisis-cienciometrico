@@ -104,7 +104,7 @@ tabla_completa = outerjoin(tabla_completa, T_promedios(:, {'Nodo', 'AVGSigma'}),
 if iscell(tabla_completa.Nodo) || ischar(tabla_completa.Nodo)
     tabla_completa.Nodo = str2double(tabla_completa.Nodo);
 end
-tabla_completa.Sigma = fillmissing(tabla_completa.Sigma, 'linear');
+tabla_completa.Sigma = fillmissing(tabla_completa.Sigma, 'linear'); %Hay valores con NaN, se llenan los faltantes para realizar el cálculo
 T_integrales = varfun(@(x) trapz(x(~isnan(x))), tabla_completa, ...
                       'GroupingVariables', 'Nodo', 'InputVariables', 'Sigma');
 T_integrales.Properties.VariableNames{'Fun_Sigma'} = 'IntegralSigma';
