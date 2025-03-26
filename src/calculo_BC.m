@@ -10,8 +10,9 @@ function arreglos = calculo_BC(arreglos)
             idx = findnode(grafo, nodoEvaluado);
 
             if idx > 0
-                bc_citespace_validacion = round((bc(idx) / par_de_nodos) * 2, 2);
-                arreglos.(caja).BC(j, 1) = bc_citespace_validacion;
+                bc_citespace_validacion = (bc(idx) / par_de_nodos) * 2;
+                redondeo = round(bc_citespace_validacion,2);
+                arreglos.(caja).BC(j, 1) = redondeo;
             end
         end
     end
