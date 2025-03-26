@@ -69,12 +69,47 @@ for i = 1:numel(componentes{1}) %agrega el valor de burstness al nodo que corres
     arreglos.(caja) = tablaActual;
 end
 
+for i = 1:numel(componentes{1}) %agrega el valor de sigma al nodo que corresponda
+    caja = sprintf('caja_%d', i); 
+    tablaActual = arreglos.(caja); 
+    tablaActual.SigmaCS = NaN(height(tablaActual), 1);
+    for j = 1:height(tablaActual)
+        nodo = tablaActual.Nodo(j); 
+        idx = find(strcmp(Resumen.ID, nodo), 1); 
+        if ~isempty(idx)
+            tablaActual.SigmaCS(j) = Resumen.Sigma(idx); 
+        end
+    end
+    arreglos.(caja) = tablaActual;
+end
+
 arreglos = calculo_sigma(arreglos); %calcula sigma
 
 tabla_completa = table(); %permite la manipulación de la información en una única tabla con todos los resultados
+
 for i = 1:numel(componentes{1})
     caja = sprintf('caja_%d', i); 
     tabla_actual = arreglos.(caja);     
     tabla_actual.Caja = repmat({caja}, height(tabla_actual), 1);
     tabla_completa = [tabla_completa; tabla_actual];
 end 
+
+% Genera promedio de Sigma agrupado por nodo
+tabla_completa.Nodo = str2double(tabla_completa.Nodo);
+T_promedios = groupsummary(tabla_completa, 'Nodo', 'mean', 'Sigma');
+T_promedios.Properties.VariableNames{'mean_Sigma'} = 'AVGSigma';
+tabla_completa = outerjoin(tabla_completa, T_promedios(:, {'Nodo', 'AVGSigma'}), 'Keys', 'Nodo', 'MergeKeys', true);
+
+% Genera integral de Sigma agrupado por nodo
+if iscell(tabla_completa.Nodo) || ischar(tabla_completa.Nodo)
+    tabla_completa.Nodo = str2double(tabla_completa.Nodo);
+end
+tabla_completa.Sigma = fillmissing(tabla_completa.Sigma, 'linear');
+T_integrales = varfun(@(x) trapz(x(~isnan(x))), tabla_completa, ...
+                      'GroupingVariables', 'Nodo', 'InputVariables', 'Sigma');
+T_integrales.Properties.VariableNames{'Fun_Sigma'} = 'IntegralSigma';
+tabla_completa = outerjoin(tabla_completa, T_integrales(:, {'Nodo', 'IntegralSigma'}), ...
+                           'Keys', 'Nodo', 'MergeKeys', true);
+
+
+
