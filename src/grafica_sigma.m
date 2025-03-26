@@ -1,39 +1,45 @@
-nodo_seleccionado = input('Nodo a graficar ', 's');
 
-filas_nodo = tabla_completa(strcmp(tabla_completa.Nodo, nodo_seleccionado), :);
+carpeta_guardado = [getenv('USERPROFILE') '\Desktop\graficas_nodos'];
+if ~exist(carpeta_guardado, 'dir')
+    mkdir(carpeta_guardado);
+end
 
-if isempty(filas_nodo)
-    disp(['El nodo seleccionado (' nodo_seleccionado ') no existe en la tabla.']);
-else
+nodos_unicos = unique(tabla_completa.Nodo);
+
+for i = 1:length(nodos_unicos)
+    nodo_actual = nodos_unicos{i};
+    filas_nodo = tabla_completa(strcmp(tabla_completa.Nodo, nodo_actual), :);
     
+    if isempty(filas_nodo)
+        disp(['El nodo ' nodo_actual ' no tiene datos en la tabla.']);
+        continue;
+    end
+    
+    nodo_id_fila = Resumen.ID == nodo_actual;
+    if any(nodo_id_fila)
+        nodo_id = Resumen.Nodo_ID(nodo_id_fila);
+    else
+        nodo_id = "Desconocido"; 
+    end
+   
     filas_nodo.Caja_Numero = cellfun(@(x) str2double(regexp(x, '\d+', 'match', 'once')), filas_nodo.Caja);
-    
     filas_nodo = sortrows(filas_nodo, 'Caja_Numero');
-
+    
     valores_sigma = filas_nodo.Sigma;
     ejes_x = 1:height(filas_nodo);
-    figure;
-    plot(ejes_x, valores_sigma, '-o', 'LineWidth', 2, 'DisplayName', sprintf('Nodo %s', nodo_seleccionado));
     
+
+    figure;
+    plot(ejes_x, valores_sigma, '-o', 'LineWidth', 2, 'DisplayName', sprintf('Nodo %s', nodo_id));
     xlabel('L (diametro)');
     ylabel('Sigma');
-    title(['Sigma del Nodo ' nodo_seleccionado ' Navarro-Hellín H (2016) a través de las diferentes longitudes']);
+    title(['Variación de Sigma para el Nodo ' nodo_id]);
     legend('show');
     grid on;
-
-    dcm = datacursormode(gcf); 
-    set(dcm, 'UpdateFcn', @(obj, event_obj) customDataCursor(event_obj, valores_sigma, filas_nodo));
+    
+  
+    nombre_archivo = fullfile(carpeta_guardado, sprintf('Nodo_%s.png', nodo_id));
+    saveas(gcf, nombre_archivo);
+    close(gcf); 
 end
-
-function output_txt = customDataCursor(event_obj, valores_sigma, filas_nodo)
-    idx = get(event_obj, 'DataIndex');
-
-    sigma_val = valores_sigma(idx);
-    caja_val = filas_nodo.Caja(idx);
-    output_txt = {
-        ['Caja: ', char(caja_val)], ...
-        ['Sigma: ', num2str(sigma_val)]
-    };
-end
-
 
