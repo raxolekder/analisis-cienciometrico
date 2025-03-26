@@ -1,7 +1,7 @@
 function [tabla_entropia] = entropia_por_nodo(subgrafoE)
     n = numnodes(subgrafoE);
-    H_nodos = NaN(n, 1);      % Entropía real por nodo, inicializada a NaN
-    H_max_nodos = NaN(n, 1);  % Entropía máxima por nodo, inicializada a NaN
+    H_nodos = NaN(n, 1);      
+    H_max_nodos = NaN(n, 1);  
 
     % Verificar si los nodos tienen nombres (usando 'Name' o 'ID')
     if isprop(subgrafoE, 'Nodes') && isfield(subgrafoE.Nodes, 'Name')
@@ -20,25 +20,29 @@ function [tabla_entropia] = entropia_por_nodo(subgrafoE)
             continue; % Si no tiene vecinos, se omite este nodo
         end
 
-        % Probabilidad uniforme
-        P = ones(d_i, 1) / d_i;
+        % Probabilidad basada en los grados de los vecinos
+        P_vecinos = degree(subgrafoE, vecinos) / sum(degree(subgrafoE, vecinos)); 
+        P_vecinos(P_vecinos == 0) = []; % Evitar log(0)
 
         % Entropía real
-        P_vecinos = degree(subgrafoE, vecinos) / sum(degree(subgrafoE, vecinos)); % Probabilidad basada en los grados
-        P_vecinos(P_vecinos == 0) = []; % Evitar log(0)
         H_nodos(i) = -sum(P_vecinos .* log2(P_vecinos));
 
         % Entropía máxima
         H_max_nodos(i) = log2(d_i);
     end
 
-    % Crear tabla con los resultados usando los nombres o IDs de los nodos
-    tabla_entropia = table(nodos', H_nodos, H_max_nodos);
+    % Crear tabla con los resultados y renombrar columnas
+    tabla_entropia = table(nodos', H_max_nodos, 'VariableNames', {'nodo', 'entropia'});
+
+    % La tabla se almacena en el workspace, sin ventanas emergentes
 
     % Graficar el grafo
     figure ('Name', 'Grafo_entropia');
     plot(subgrafoE);
 end
+
+
+
 
 
 
