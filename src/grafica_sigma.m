@@ -7,7 +7,7 @@ end
 nodos_unicos = unique(tabla_completa.Nodo);
 
 for i = 1:length(nodos_unicos)
-    nodo_actual = nodos_unicos{i};
+    nodo_actual = nodos_unicos(i);
     filas_nodo = tabla_completa(strcmp(tabla_completa.Nodo, nodo_actual), :);
     
     if isempty(filas_nodo)
@@ -42,4 +42,3 @@ for i = 1:length(nodos_unicos)
     saveas(gcf, nombre_archivo);
     close(gcf); 
 end
-
