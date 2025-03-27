@@ -112,4 +112,13 @@ tabla_completa = outerjoin(tabla_completa, T_integrales(:, {'Nodo', 'IntegralSig
                            'Keys', 'Nodo', 'MergeKeys', true);
 
 
+amplitud = 12;
+grupos = findgroups(tabla_completa.Nodo);
+max_sigma_por_nodo = splitapply(@max, tabla_completa.Sigma, grupos);
+integral_sigma_por_nodo = splitapply(@(x) trapz(x), tabla_completa.Sigma, grupos);
+tabla_completa.maxSigma = max_sigma_por_nodo(grupos);
+tabla_completa.IntegralSigma = integral_sigma_por_nodo(grupos);
+tabla_completa.SigmaNormalizada = tabla_completa.IntegralSigma ./ (tabla_completa.maxSigma * amplitud);
+
+
 
