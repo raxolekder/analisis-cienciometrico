@@ -10,7 +10,7 @@
 ## **📌 Descripción**
 
  
-Este proyecto forma parte de mi tesis titulada *"Redefinición de indicador de cienciometría para la novedad científica"*. Redefinir el indicador cienciométrico de novedad científica "sigma"; aplicando el método de cubrimiento de cajas, a un gran volumen de artículos científicos, tal que, de la serie de datos resultante se obtenga la entropía máxima, la cual oriente sobre la novedad científica del volumen de artículos analizado; siendo esto la redefinición propia del indicador "sigma".
+Este proyecto forma parte de mi tesis titulada *"Redefinición de indicador de cienciometría para la novedad científica"*. Cuyo objetivo es redefinir el indicador cienciométrico de novedad científica "sigma"; aplicando el método de cubrimiento de cajas, a un gran volumen de artículos científicos, tal que, de la serie de datos resultante se se obtenga el promedio y el área bajo la curva de sigma, la cual oriente sobre la novedad científica del volumen de artículos analizado; siendo esto la redefinición propia del indicador "sigma".
 
 ---
 
@@ -18,16 +18,20 @@ Este proyecto forma parte de mi tesis titulada *"Redefinición de indicador de c
 Explicación de la organización de los archivos y carpetas.
 
 ```plaintext
-📂 Tesis-Burstness
+📂 Tesis
  ├── 📜 README.md               # Este archivo
  ├── 📜 TESIS_DIPV.pdf          # Documento final de la tesis
  ├── 📂 src/                    # Código fuente
- │   ├── burstness.m            # Implementación del algoritmo de Kleinberg
- │   ├── procesar_datos.m       # Preprocesamiento de datos
- │   ├── visualizar_grafos.m    # Función para graficar los resultados
- ├── 📂 data/                   # Datos utilizados
- │   ├── referencias.csv        # Archivo con citas de artículos
- │   ├── nodos_componentes.mat  # Información de nodos en MATLAB
+ │   ├── creacion_grafo.m        # Código principal
+ │   ├── boxcoveringmemb.m       # Genera las cajas del algoritmo
+ │   ├── calculo_BC.m            # Función para calcular betweeness centrality
+ │   ├── calculo_sigma.m         # Función para calcular sigma
+ │   ├── diameter.m              # Función para calcular el diametro de la red
+ │   ├── grafica_sigma.m         # Código para generar gráficas
+ │   ├── memb.m                  # Cálculo del algoritmo MEMB
+ ├── 📂 data/                    # Datos utilizados
+ │   ├── Matrizdeadyacencia.txt  # Archivo con la matriz de adyacencia obtenida de CiteSpace
+ │   ├── Resumen.xlsx            # Información obtenida de CiteSpace
  ├── 📂 results/                # Resultados obtenidos
  │   ├── burstness_results.mat  # Matriz con valores de burstness
  │   ├── visualizaciones/       # Gráficos generados
@@ -38,7 +42,7 @@ Explicación de la organización de los archivos y carpetas.
 ---
 
 ## **🛠 Requisitos y Configuración**
-Lista de herramientas, software y librerías necesarias para ejecutar el código.
+Se requiere de MATLAB para ejecutar los scripts
 
 ### **🔧 Requisitos**
 - **MATLAB** (Versión mínima recomendada: R2024b)  
@@ -54,7 +58,7 @@ cd tesis-burstness
 En MATLAB, abre `.m` y ejecuta:
 
 ```matlab
-run('burstness.m')
+run('creacion_grafo.m')
 ```
 
 ---
@@ -98,14 +102,9 @@ title('Evolución del Burstness en Citas Científicas');
 ## **📝 Contribuciones y Contacto**
 Si el código estará disponible públicamente:
 
-📌 **Cómo contribuir**
-1. Haz un **fork** del repositorio.
-2. Crea una nueva rama: `git checkout -b feature-nueva-funcionalidad`
-3. Sube los cambios y haz un **pull request**.
-
 📌 **Contacto**
 Para preguntas o comentarios, puedes escribirme a:  
-📧 [tuemail@ejemplo.com](mailto:tuemail@ejemplo.com)  
+📧 [dparrav2200@alumno.ipn,mx](mailto:dparrav2200@alumno.ipn.mx)  
 
 ---
 
