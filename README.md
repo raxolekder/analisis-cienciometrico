@@ -15,7 +15,6 @@ Este proyecto forma parte de mi tesis titulada *"Redefinición de indicador de c
 ---
 
 ## **📁 Estructura del Proyecto**
-Explicación de la organización de los archivos y carpetas.
 
 ```plaintext
 📂 Tesis
