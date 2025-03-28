@@ -100,7 +100,6 @@ title('Evolución del Burstness en Citas Científicas');
 ---
 
 ## **📝 Contribuciones y Contacto**
-Si el código estará disponible públicamente:
 
 📌 **Contacto**
 Para preguntas o comentarios, puedes escribirme a:  
