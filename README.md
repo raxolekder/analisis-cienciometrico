@@ -31,7 +31,7 @@ Este proyecto forma parte de mi tesis titulada *"Redefinición de indicador de c
  ├── 📂 data/                    # Datos utilizados
  │   ├── Matrizdeadyacencia.txt  # Archivo con la matriz de adyacencia obtenida de CiteSpace
  │   ├── Resumen.xlsx            # Información obtenida de CiteSpace
- ├── 📂 results/                # Resultados obtenidos
+ ├── 📂 results/                 # Resultados obtenidos
  │   ├── burstness_results.mat  # Matriz con valores de burstness
  │   ├── visualizaciones/       # Gráficos generados
  ├── 📜 requirements.txt        # Librerías necesarias
