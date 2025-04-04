@@ -22,7 +22,7 @@ for i = 1:num_componentes
                 nodos = boxes{l};
                 subgrafos{l} = subgraph(comp{i},nodos);
             end
-            subgrafos_r{r} = subgrafos; 
+            subgrafos_r{r} = subgrafos;
         end
         componentes{i} = subgrafos_r; 
     else
@@ -35,7 +35,7 @@ nodosBuscados = Resumen.ID(Resumen.Burst > 0);
 nodosBuscados = arrayfun(@num2str, nodosBuscados, 'UniformOutput', false);
 Resumen.ID = string(Resumen.ID);
 
-arreglos = struct(); %crea estructura para almacenar cada caja como un arreglo
+arreglos = struct(); %crea estructura para almacenar cada nivel de cobertura como un arreglo
 for i = 1:numel(componentes{1}) 
     arreglo_grafos = {}; 
     tabla_gyn = table();
@@ -50,13 +50,13 @@ for i = 1:numel(componentes{1})
             end
         end
     end
-    arreglos.(sprintf('caja_%d', i)) = tabla_gyn;
+    arreglos.(sprintf('nivel_cobertura_%d', i)) = tabla_gyn;
 end
 
 arreglos = calculo_BC(arreglos); %calcula betweeness centrality
 
 for i = 1:numel(componentes{1}) %agrega el valor de burstness al nodo que corresponda
-    caja = sprintf('caja_%d', i); 
+    caja = sprintf('nivel_cobertura_%d', i); 
     tablaActual = arreglos.(caja); 
     tablaActual.Burst = NaN(height(tablaActual), 1);
     for j = 1:height(tablaActual)
@@ -69,8 +69,8 @@ for i = 1:numel(componentes{1}) %agrega el valor de burstness al nodo que corres
     arreglos.(caja) = tablaActual;
 end
 
-for i = 1:numel(componentes{1}) %agrega el valor de sigma al nodo que corresponda
-    caja = sprintf('caja_%d', i); 
+for i = 1:numel(componentes{1}) %agrega el valor de sigma de citespace al nodo que corresponda
+    caja = sprintf('nivel_cobertura_%d', i); 
     tablaActual = arreglos.(caja); 
     tablaActual.SigmaCS = NaN(height(tablaActual), 1);
     for j = 1:height(tablaActual)
@@ -83,14 +83,14 @@ for i = 1:numel(componentes{1}) %agrega el valor de sigma al nodo que correspond
     arreglos.(caja) = tablaActual;
 end
 
-arreglos = calculo_sigma(arreglos); %calcula sigma
+arreglos = calculo_sigma(arreglos); %calcula Sigma
 
 tabla_completa = table(); %permite la manipulación de la información en una única tabla con todos los resultados
 
 for i = 1:numel(componentes{1})
-    caja = sprintf('caja_%d', i); 
+    caja = sprintf('nivel_cobertura_%d', i); 
     tabla_actual = arreglos.(caja);     
-    tabla_actual.Caja = repmat({caja}, height(tabla_actual), 1);
+    tabla_actual.Nivel_Cobertura = repmat({caja}, height(tabla_actual), 1);
     tabla_completa = [tabla_completa; tabla_actual];
 end 
 
@@ -111,8 +111,7 @@ T_integrales.Properties.VariableNames{'Fun_Sigma'} = 'IntegralSigma';
 tabla_completa = outerjoin(tabla_completa, T_integrales(:, {'Nodo', 'IntegralSigma'}), ...
                            'Keys', 'Nodo', 'MergeKeys', true);
 
-
-amplitud = 12;
+amplitud = 12; %Considera los niveles de cobertura del 1 al 13
 grupos = findgroups(tabla_completa.Nodo);
 max_sigma_por_nodo = splitapply(@max, tabla_completa.Sigma, grupos);
 integral_sigma_por_nodo = splitapply(@(x) trapz(x), tabla_completa.Sigma, grupos);
