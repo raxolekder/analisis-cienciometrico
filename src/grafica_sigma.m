@@ -38,10 +38,10 @@ for i = 1:length(nodos_unicos)
     end
 
     % Extraer número de caja
-    if iscell(filas_nodo.Caja)
-        filas_nodo.Caja_Numero = cellfun(@(x) str2double(regexp(x, '\d+', 'match', 'once')), filas_nodo.Caja);
+    if iscell(filas_nodo.Nivel_Cobertura)
+        filas_nodo.Caja_Numero = cellfun(@(x) str2double(regexp(x, '\d+', 'match', 'once')), filas_nodo.Nivel_Cobertura);
     else
-        filas_nodo.Caja_Numero = str2double(regexp(filas_nodo.Caja, '\d+', 'match', 'once'));
+        filas_nodo.Caja_Numero = str2double(regexp(filas_nodo.Nivel_Cobertura, '\d+', 'match', 'once'));
     end
     filas_nodo = sortrows(filas_nodo, 'Caja_Numero');
 
@@ -52,7 +52,7 @@ for i = 1:length(nodos_unicos)
     % Graficar
     figure;
     plot(ejes_x, valores_sigma, '-o', 'LineWidth', 2, 'DisplayName', sprintf('Nodo %s', nodo_id));
-    xlabel('# Subgrafo');
+    xlabel('Nivel de cobertura/Longitud');
     ylabel('Sigma');
     title(['Variación de Sigma para el Nodo ' char(nodo_id)]);
     legend('show');
