@@ -50,8 +50,8 @@ Se requiere de MATLAB para ejecutar los scripts
 ### **💻 Instalación**
 
 ```bash
-git clone https://github.com/raxolekder/matlab.git
-cd matlab
+git clone https://github.com/raxolekder/analisis-cienciometrico.git
+cd analisis-cienciometrico
 ```
 
 En MATLAB, carga en el workspace los archivos "Matrizdeadyacencia.txt" y "Resumen.xlsx" y abre `creacion_grafo.m` y ejecuta:
