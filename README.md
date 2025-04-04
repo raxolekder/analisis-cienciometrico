@@ -50,37 +50,15 @@ Se requiere de MATLAB para ejecutar los scripts
 ### **💻 Instalación**
 
 ```bash
-git clone https://github.com/usuario/tesis-burstness.git
-cd tesis-burstness
+git clone https://github.com/raxolekder/matlab.git
+cd matlab
 ```
 
-En MATLAB, abre `.m` y ejecuta:
+En MATLAB, carga en el workspace los archivos "Matrizdeadyacencia.txt" y "Resumen.xlsx" y abre `creacion_grafo.m` y ejecuta:
 
 ```matlab
 run('creacion_grafo.m')
 ```
-
----
-
-## **🚀 Uso del Código**
-Explica cómo ejecutar el código y los posibles parámetros.
-
-```matlab
-resultados = burstness(datos, alfa, gamma);
-```
-
-📌 **Parámetros**:  
-- `datos`: Archivo con referencias científicas.  
-- `alfa`: Parámetro del modelo de Kleinberg.  
-- `gamma`: Peso de transición en la cadena de Markov.  
-
-📌 **Ejemplo de ejecución**:  
-
-```matlab
-data = load('data/referencias.csv');
-resultados = burstness(data, 2.0, 1.0);
-```
-
 ---
 
 ## **📊 Resultados y Ejemplos**
@@ -98,7 +76,7 @@ title('Evolución del Burstness en Citas Científicas');
 
 ---
 
-## **📝 Contribuciones y Contacto**
+## **📝 Contacto**
 
 📌 **Contacto**
 Para preguntas o comentarios, puedes escribirme a:  
