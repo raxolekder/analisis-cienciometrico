@@ -1,6 +1,6 @@
 function arreglos = calculo_BC(arreglos)
     for i = 1:13
-        caja = sprintf('caja_%d', i);
+        caja = sprintf('nivel_cobertura_%d', i);
         for j = 1:height(arreglos.(caja))
             grafo = arreglos.(caja).Grafo{j, 1};
             n = numnodes(grafo);
