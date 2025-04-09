@@ -1,3 +1,7 @@
+Este software fue desarrollado por el Instituto Politécnico Nacional y está registrado en el Instituto Nacional del Derecho de Autor (INDAUTOR), México, con el número de registro [Número de registro] con fecha [Fecha].
+
+Se distribuye bajo la Apache License 2.0. Consulta el archivo LICENSE para más detalles.
+
 # **Redefinición de indicador de cienciometría para la novedad científica**
 
 📅 **Fecha**: 2025 
