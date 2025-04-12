@@ -11,8 +11,12 @@ function arreglos = calculo_BC(arreglos)
 
             if idx > 0
                 bc_citespace_validacion = (bc(idx) / par_de_nodos) * 2;
-                redondeo = round(bc_citespace_validacion,2);
-                arreglos.(caja).BC(j, 1) = redondeo;
+                if isnan(bc_citespace_validacion)
+                    arreglos.(caja).BC(j, 1) = 0;
+                else
+                    redondeo = round(bc_citespace_validacion, 2);
+                    arreglos.(caja).BC(j, 1) = redondeo;
+                end
             end
         end
     end
