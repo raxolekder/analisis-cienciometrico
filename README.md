@@ -1,4 +1,4 @@
-Este software fue desarrollado por el Instituto Politécnico Nacional y está registrado en el Instituto Nacional del Derecho de Autor (INDAUTOR), México, con el número de registro [Número de registro] con fecha [Fecha].
+Este software fue desarrollado por el Instituto Politécnico Nacional y está registrado en el Instituto Nacional del Derecho de Autor (INDAUTOR), México, con el número de registro [en trámite] con fecha: .
 
 Se distribuye bajo la Apache License 2.0. Consulta el archivo LICENSE para más detalles.
 
