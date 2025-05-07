@@ -14,7 +14,7 @@ Se distribuye bajo la Apache License 2.0. Consulta el archivo LICENSE para más 
 ## **📌 Descripción**
 
  
-Este proyecto forma parte de mi tesis titulada *"Redefinición de indicador de cienciometría para la novedad científica"*. Cuyo objetivo es redefinir el indicador cienciométrico de novedad científica "sigma"; aplicando el método de cubrimiento de cajas, a un gran volumen de artículos científicos, tal que, de la serie de datos resultante se se obtenga el promedio y el área bajo la curva de sigma, la cual oriente sobre la novedad científica del volumen de artículos analizado; siendo esto la redefinición propia del indicador "sigma".
+Este proyecto forma parte de mi tesis titulada *"Redefinición de indicador de cienciometría para la novedad científica"*. Cuyo objetivo es redefinir el indicador cienciométrico de novedad científica "sigma"; aplicando el método de cubrimiento de cajas, a un gran volumen de artículos científicos, tal que, de la serie de datos resultante se obtenga el área bajo la curva de sigma, la cual oriente sobre la novedad científica del volumen de artículos analizado; siendo esto la redefinición propia del indicador "sigma".
 
 ---
 
@@ -36,9 +36,7 @@ Este proyecto forma parte de mi tesis titulada *"Redefinición de indicador de c
  │   ├── Matrizdeadyacencia.txt  # Archivo con la matriz de adyacencia obtenida de CiteSpace
  │   ├── Resumen.xlsx            # Información obtenida de CiteSpace
  ├── 📂 results/                 # Resultados obtenidos
- │   ├── burstness_results.mat  # Matriz con valores de burstness
- │   ├── visualizaciones/       # Gráficos generados
- ├── 📜 requirements.txt        # Librerías necesarias
+ │   ├── Gráficos/               # Gráficos generados
  ├── 📜 LICENSE                 # Licencia del proyecto
 ```
 
