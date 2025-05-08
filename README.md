@@ -64,7 +64,7 @@ run('creacion_grafo.m')
 ---
 
 📌 **Ejemplo de salida esperada**:  
-![Ejemplo de gráfica](results/Gráficos/Nodo_Abul Bashar M 798.png)
+![Ejemplo de gráfica](results/Gráficos/Nodo_Abul%20Bashar%20M%20798.png)
 
 ---
 
