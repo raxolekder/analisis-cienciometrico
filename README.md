@@ -63,18 +63,8 @@ run('creacion_grafo.m')
 ```
 ---
 
-## **📊 Resultados y Ejemplos**
-Incluye ejemplos de salida y gráficos.
-
-```matlab
-plot(resultados.anios, resultados.burstness);
-xlabel('Año');
-ylabel('Intensidad del Burstness');
-title('Evolución del Burstness en Citas Científicas');
-```
-
 📌 **Ejemplo de salida esperada**:  
-![Ejemplo de gráfica](results/visualizaciones/burstness_plot.png)
+![Ejemplo de gráfica](results/Gráficos/Nodo_Abul Bashar M 798.png)
 
 ---
 
