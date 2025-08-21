@@ -1,4 +1,4 @@
-Este software fue desarrollado por el Instituto Politécnico Nacional y está registrado en el Instituto Nacional del Derecho de Autor (INDAUTOR), México, con el número de registro [en trámite] con fecha: .
+Este software fue desarrollado por el Instituto Politécnico Nacional y está registrado en el Instituto Nacional del Derecho de Autor (INDAUTOR), México, con el número de registro 03-2025-060611211800-01 con fecha: 27 de Junio de 2025.
 
 Se distribuye bajo la Apache License 2.0. Consulta el archivo LICENSE para más detalles.
 
